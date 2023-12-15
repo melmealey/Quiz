@@ -6,21 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
     <link rel="stylesheet" href="style.css" />
-
-
-
+    <script defer src="script.js"></script>
 </head>
 
 <body>
-    <h1>
-        <header>How Smart Are You?</Header>
-        <script src="script.js"></script>
-        <button>Click to Begin!</button>
-        <p id="countdown"10:00></p>
+    <!-- <h1><header>How Smart Are You?</Header></h1> -->
+    <section class="container">
 
-    </h1>
+        <div id="questionContainer" class="hide"></div>
+            <div id="question">Question</div>
+            <div id="answerButtons" class="buttonChoice">
+                <button class="button">1</button>
+                <button class="button">2</button>
+                <button class="button">3</button>
+                <button class="button">4</button>
+        </div>
+       
+        <div class="controls">
+            <button id="beginQuiz" class="startButton button">Click to Begin!</button>
+            <button id="nextQuestion" class="nextButton button hide">Next Question</button>
+        </div>
 
-
+    </section>
 </body>
-
 </html>
