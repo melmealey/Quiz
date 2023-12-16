@@ -10,17 +10,30 @@ startButton.addEventListener('click', startGame)
 function startGame(){
     console.log("Here we go!")
 }
+
+//I want the start button to go away after it is clicked to start the game
     startButton.classList.add('hide')
 
 let countdown = 60;
-for (let i=0; i < questions.length; i++)
-    let response =window.prompt();questions[i.prompt]
+for (let i=0; i < countdown.length; i++){
+
+
+//Countdown begins
+
+
+
+
+
+
+
+    let 
     if (response == quesitons [i].answer){
         alert("Correct!");
     } else {
         score--;
         alert ("NOPE!");
     }
+}
 
 
 //     shuffledQuestions = questions.sort(() => Math.random() - .5)
@@ -45,19 +58,25 @@ for (let i=0; i < questions.length; i++)
 
 // }
 
-const questions =  [
+let questions =  [
     {
-        prompt: 'What does HTML stand for?\n(a) How To Make Lasagna\n\(b) Hyper Text Markup Language\n(c) Houses Together Move Left\(d) Harry Told Mommy Lies",
+        Question: 'What does HTML stand for?\n(a) How To Make Lasagna\n\(b) Hyper Text Markup Language\n(c) Houses Together Move Left\(d) Harry Told Mommy Lies",
         answer: "b"
         
     },
     {
+        question: 'Question 2'
 
     },
     {
+        question: 'Question 3'
+    },
+
+    {   question: 'Question 4'
 
     },
-    {,
+    {   question: 'Question 5'
+
     }
 
 ]
