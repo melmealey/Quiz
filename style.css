@@ -11,37 +11,24 @@ h1 {
 
 body {
     background-color: black;
-    padding: 0;
     display: flex;
-    width: 100vw;
-    height: 100vh;
     justify-content: center;
     align-items: center;
     
 }
 
-/* .containter {
-    /* width: 800px;
+.containter {
+    width: 800px;
     max-width: 80%;
     background-color: white;
     border-radius: 5px ;
-    padding: 10px; */
-    /* flex-direction: row;
-    align-self: center; */
-/* } */
+   
+}
 
-/* .startButton{
-    background-color: #1e73be;
-    border: 4px solid #1e80be;
-    border-radius: 4px;
-    padding: 6px 12px;
-    font-size: 18px;
-    text-align:center;
-    color: white;
-    width: 240px;
-    height: 100px;
-    margin: 12px;
-    padding: 10px;
+.buttonChoice {
+    display: grid;
+    gap: 10px;
+    margin: 20px;
 }
 
 .button {
@@ -52,21 +39,25 @@ body {
     font-size: 18px;
     text-align:center;
     color: white;
-    width: 240px;
-    height: 100px;
+    width: 150px;
+    height: 75px;
     margin: 12px;
     padding: 10px;
     cursor: pointer;
 
 }  
 
-.buttonChoice {
-    display: grid;
-}
-
-.buttonChoice:hover {
+.button:hover {
     border-color: deeppink;
 }
+
+.startButton {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 6px 12px;
+    
+    
+} 
 
 .controls {
     display: flex;
@@ -76,4 +67,4 @@ body {
 
 .hide {
     display: none;
-  } */
+  } 
