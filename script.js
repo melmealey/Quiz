@@ -11,11 +11,22 @@ function startGame(){
     console.log("Here we go!")
 }
 
-//I want the start button to go away after it is clicked to start the game
-    startButton.classList.add('hide')
+//I want the start button to hide and the questions container to appear after it is clicked to start the game
+document.getElementById(startButton).onclick = function(){
+    let startButton =document.getElementById("startButton");
+    if(startButton.style.display==="none"){
+        startButton.style.display = "block";
+    } else{
+        startButton.style.display = "none";
+    }
+};
 
-let countdown = 60;
-for (let i=0; i < countdown.length; i++){
+questionContainterElement.classList.show('show')
+
+
+
+// let countdown = 60;
+// for (let i=0; i < countdown.length; i++){
 
 
 //Countdown begins
@@ -26,14 +37,14 @@ for (let i=0; i < countdown.length; i++){
 
 
 
-    let 
-    if (response == quesitons [i].answer){
-        alert("Correct!");
-    } else {
-        score--;
-        alert ("NOPE!");
-    }
-}
+//     let 
+//     if (response == quesitons [i].answer){
+//         alert("Correct!");
+//     } else {
+//         score--;
+//         alert ("NOPE!");
+//     }
+// }
 
 
 //     shuffledQuestions = questions.sort(() => Math.random() - .5)
@@ -60,22 +71,47 @@ for (let i=0; i < countdown.length; i++){
 
 let questions =  [
     {
-        Question: 'What does HTML stand for?\n(a) How To Make Lasagna\n\(b) Hyper Text Markup Language\n(c) Houses Together Move Left\(d) Harry Told Mommy Lies",
-        answer: "b"
+        Question: "What does HTML stand for?"
+        answer1: "How To Make Lasagna"
+        answer2: "Hyper Text Markup Language"
+        answer3: "Houses Together Might Levetate"
+        answer4: "Harry Told Mommy Lies"
+        correct answer:
         
     },
     {
-        question: 'Question 2'
+        Question: 'Question 2'
+        answer1:""
+        answer2:""
+        answer3:""
+        answer4:""
+        correct answer:""
 
     },
     {
         question: 'Question 3'
+        answer1:""
+        answer2:""
+        answer3:""
+        answer4:""
+        correct answer:""
+
     },
 
     {   question: 'Question 4'
+        answer1:""
+        answer2:""
+        answer3:""
+        answer4:""
+        correct answer:""
 
     },
     {   question: 'Question 5'
+        answer1:""
+        answer2:""
+        answer3:""
+        answer4:""
+        correct answer:""
 
     }
 
