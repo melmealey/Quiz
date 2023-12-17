@@ -57,6 +57,7 @@ let questions = [
   ];
   let timeRemaining = questions.length *15 
   let index =0
+
   function showQuestion() {
 
   }
@@ -82,9 +83,17 @@ title.textContent = questions [index].Question
 answerChoice1.textContent =questions [index].answer1
 answerChoice2.textContent =questions [index].answer2
 answerChoice3.textContent =questions [index].answer3
-answerChoice4.textContent =questions [index].answer4
+answerChoice4.textContent =questions [index].answer4 
 
 }
+
+// function showQuestion () {
+//     const questions =document.getElementById("questions");
+//     questions.textContent = questions[currentQuestion].questions;
+
+// }
+
+
 
 function countdown () {
     time.textContent= timeRemaining--
