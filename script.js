@@ -4,24 +4,23 @@ const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answerButtons')
 
 // Do I want my questions suffled? let shuffledQuestions, currentQuestionIndex
-
-startButton.addEventListener('click', startGame)
-
+//Here we go!
 function startGame(){
     console.log("Here we go!")
 }
+startButton.addEventListener('click', startGame)
 
 //I want the start button to hide and the questions container to appear after it is clicked to start the game
-document.getElementById(startButton).onclick = function(){
-    let startButton =document.getElementById("startButton");
-    if(startButton.style.display==="none"){
-        startButton.style.display = "block";
-    } else{
-        startButton.style.display = "none";
-    }
-};
+// document.getElementById(startButton).onclick = function(){
+//     let startButton =document.getElementById("startButton");
+//     if(startButton.style.display==="none"){
+//         startButton.style.display = "block";
+//     } else{
+//         startButton.style.display = "none";
+//     }
+// };
 
-questionContainterElement.classList.show('show')
+// questionContainterElement.classList.show('show')
 
 
 
@@ -53,7 +52,7 @@ questionContainterElement.classList.show('show')
 //     nextQuestion()
 // }
 
- //once the question is answered i wan it to alert Correct! or Wrong! and move on to the next question
+ //once the question is answered i want it to alert Correct! or Wrong! and move on to the next question
 // function nextQuestion(){
 //     showQuestion(shuffledQuestions[currentQuestionIndex])
 
@@ -68,54 +67,64 @@ questionContainterElement.classList.show('show')
 // function chooseAnswer() {
 
 // }
-
-let questions =  [
+let questions = [
     {
-        Question: "What does HTML stand for?"
-        answer1: "How To Make Lasagna"
-        answer2: "Hyper Text Markup Language"
-        answer3: "Houses Together Might Levetate"
-        answer4: "Harry Told Mommy Lies"
-        correct answer:
-        
+      Question: "What does HTML stand for?",
+      answer1: "How To Make Lasagna",
+      answer2: "Hyper Text Markup Language",
+      answer3: "Houses Together Might Levetate",
+      answer4: "Harry Told Mommy Lies",
+      correctAnswer: "Hyper Text Maekup Language",
     },
     {
-        Question: 'Question 2'
-        answer1:""
-        answer2:""
-        answer3:""
-        answer4:""
-        correct answer:""
-
+      Question: "In what year was JavaScript intorduced?",
+      answer1: "1970",
+      answer2: "1997",
+      answer3: "1990",
+      answer4: "1995",
+      correctAnswer: "1995",
     },
     {
-        question: 'Question 3'
-        answer1:""
-        answer2:""
-        answer3:""
-        answer4:""
-        correct answer:""
-
+      question: "JavaScript file has an extnesion of:",
+      answer1: ".Java",
+      answer2: ".javascript",
+      answer3: ".js",
+      answer4: ".xtml",
+      correctAnswer: ".js",
     },
-
-    {   question: 'Question 4'
-        answer1:""
-        answer2:""
-        answer3:""
-        answer4:""
-        correct answer:""
-
+  
+    {
+      question: "Which CSS property controls the text size?",
+      answer1: "text-style",
+      answer2: "font-style",
+      answer3: "text-size",
+      answer4: "font-size",
+      correctAnswer: "font-size",
     },
-    {   question: 'Question 5'
-        answer1:""
-        answer2:""
-        answer3:""
-        answer4:""
-        correct answer:""
+    {
+      question: "Which is the correct HTML element for the largest heading?",
+      answer1: "<h1>",
+      answer2: "<head>",
+      answer3: "<heading>",
+      answer4: "<h6>",
+      correctAnswer: "<h1>",
+    },
+  ];
+
+  function showQuestion() {
+
+  }
+
+  for (let i = 0; i < questions.length; i++) {
+    console.log(questions[i])
 
     }
+    // return questions;
 
-]
+    
+  
+ 
+  
 
 
 
