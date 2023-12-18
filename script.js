@@ -14,51 +14,50 @@ let answerChoice3 =document.getElementById('choice3')
 let answerChoice4 =document.getElementById('choice4')
 
 //Quiz questions array
+
 let questions = [
     {
-      question1: "What does HTML stand for?",
+      question: "What does HTML stand for?",
       answer1: "How To Make Lasagna",
       answer2: "Hyper Text Markup Language",
       answer3: "Houses Together Might Levetate",
       answer4: "Harry Told Mommy Lies",
-      correctAnswer1: "Hyper Text Markup Language",
+      correctAnswer: "Hyper Text Markup Language",
     },
-
     {
-      question2: "In what year was JavaScript intorduced?",
+      question: "In what year was JavaScript intorduced?",
       answer1: "1970",
       answer2: "1997",
       answer3: "1990",
       answer4: "1995",
-      correctAnswer2: "1995",
+      correctAnswer: "1995",
     },
-
     {
-      question3: "JavaScript file has an extnesion of:",
+      question: "JavaScript file has an extnesion of:",
       answer1: ".Java",
       answer2: ".javascript",
       answer3: ".js",
       answer4: ".xtml",
-      correctAnswer3: ".js",
+      correctAnswer: ".js",
     },
-  
     {
-      question4: "Which CSS property controls the text size?",
+      question: "Which CSS property controls the text size?",
       answer1: "text-style",
       answer2: "font-style",
       answer3: "text-size",
       answer4: "font-size",
-      correctAnswer4: "font-size",
+      correctAnswer: "font-size",
     },
     {
-      question5: "Which is the correct HTML element for the largest heading?",
+      question: "Which is the correct HTML element for the largest heading?",
       answer1: "<h1>",
       answer2: "<head>",
       answer3: "<heading>",
       answer4: "<h6>",
-      correctAnswer5: "<h1>",
+      correctAnswer: "<h1>",
     },
   ];
+
   let timeRemaining = questions.length *15 
   let index =0
 
@@ -87,23 +86,26 @@ answerChoice3.textContent =questions [index].answer3
 answerChoice4.textContent =questions [index].answer4 
 
 }
-function checkAnswer(quesiton1, answer1,answer2, answer3, answer4) {
-    if (question1.correctAnswer === correctAnswer) {
-         //Display "CORRECT!"
-        alert("CORRECT!");
-    } else {
-        // Display "NOPE!"
-        alert("NOPE!");
-    }
+function checkAnswer(guess) {
+  const answer = questions[index].correctAnswer;
+  if (guess === answer) {
+    //Display "CORRECT!"
+    alert("CORRECT!");
+  } else {
+    // Display "NOPE!"
+    alert("NOPE!");
+  }
+  index++;
 }
 
-answerChoice1.addEventListener('click', function() {
-    checkAnswer(questions[currentQuestionIndex], answerChoice1.innerText);
+answerButtonsElement.addEventListener("click", function (event) {
+    const guess = event.target.innerHTML;
+    checkAnswer(guess);
     currentQuestionIndex++;
     if (currentQuestionIndex < questions.length) {
-        setQuestion(questions[currentQuestionIndex]);
+      setQuestion(questions[currentQuestionIndex]);
     }
-});
+  });
 
 function countdown () {
     time.textContent= timeRemaining--
