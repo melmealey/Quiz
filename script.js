@@ -92,6 +92,7 @@ answerChoice3.textContent =questions [index].answer3
 answerChoice4.textContent =questions [index].answer4 
 
 }
+//alerts
 function checkAnswer(event) {
     let guess=event.target.textContent
   const answer = questions[index].correctAnswer;
@@ -100,7 +101,7 @@ function checkAnswer(event) {
     alert("CORRECT!");
   } else {
     // Display "NOPE!"
-    alert("NOPE!");
+    alert("NOPE! -10 seconds!");
     timeRemaining=timeRemaining-10;
 
   }
@@ -111,10 +112,12 @@ function checkAnswer(event) {
 else {
 quizContainer.classList.add("hide")
 initialContainer.classList.remove("hide")
+tryAgainBtn.classList.remove("hide")
+resetHighScores.classList.remove("hide")
     
     stopTimer()
 }
-  
+//Timer ends at 0 seconds
 }
 
 function stopTimer () {
@@ -127,6 +130,7 @@ function countdown () {
         stopTimer();
       }
 }
+//Save and display scores
 function saveHighScore(score){
     const user={
         initial:initialInput.value ,
@@ -136,7 +140,7 @@ function saveHighScore(score){
     localStorage.setItem("userScores",JSON.stringify(userScores));
     initialContainer.classList.add ("hide");
     saveHighScoreContainer.classList.remove("hide");
-displayHighScore()
+    displayHighScore()
 }
 function displayHighScore () {
  scoreList.textContent=""
@@ -146,7 +150,12 @@ function displayHighScore () {
    scoreList.appendChild(li);
     
  }
+//when
+
+
 }
+
+
 startButton.addEventListener('click', startGame)
 answerChoice1.addEventListener("click", answerChoice1)
 answerChoice2.addEventListener("click", answerChoice2)
