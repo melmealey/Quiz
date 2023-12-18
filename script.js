@@ -12,9 +12,14 @@ let answerChoice1 =document.getElementById('choice1')
 let answerChoice2 =document.getElementById('choice2')
 let answerChoice3 =document.getElementById('choice3')
 let answerChoice4 =document.getElementById('choice4')
+let initialContainer =document.getElementById('initialContainer')
+let userScores= JSON.parse(localStorage.getItem("userScores"))||[]
+let initialsBtn =document.getElementById('Initials-btn')
+let initialInput =document.getElementById('initial-input')
+let saveHighScoreContainer =document.getElementById('highScoreContainer')
+let scoreList =document.getElementById('scoreList')
 
 //Quiz questions array
-
 let questions = [
     {
       question: "What does HTML stand for?",
@@ -50,18 +55,17 @@ let questions = [
     },
     {
       question: "Which is the correct HTML element for the largest heading?",
-      answer1: "<h1>",
-      answer2: "<head>",
-      answer3: "<heading>",
-      answer4: "<h6>",
-      correctAnswer: "<h1>",
+      answer1: "h1",
+      answer2: "head",
+      answer3: "heading",
+      answer4: "h6",
+      correctAnswer: "h1",
     },
   ];
 
   let timeRemaining = questions.length *15 
   let index =0
 
-     //why is this empty?
   function showQuestion() {
     for (let i = 0; i < questions.length; i++) {
         console.log(questions[i])
@@ -72,7 +76,7 @@ let questions = [
 function startGame(){
     startButton.style.display ="none"
     console.log("Here we go!")
-    //I want the start button to hide and the questions container to appear after it is clicked to start the game
+//start button hides (and the questions container appears) after it is clicked to start the game
     quizContainer.classList.remove("hide")
     controls.classList.add("hide")
     clockid= setInterval(countdown, 1000)
@@ -86,7 +90,8 @@ answerChoice3.textContent =questions [index].answer3
 answerChoice4.textContent =questions [index].answer4 
 
 }
-function checkAnswer(guess) {
+function checkAnswer(event) {
+    let guess=event.target.textContent
   const answer = questions[index].correctAnswer;
   if (guess === answer) {
     //Display "CORRECT!"
@@ -94,18 +99,27 @@ function checkAnswer(guess) {
   } else {
     // Display "NOPE!"
     alert("NOPE!");
+    timeRemaining=timeRemaining-10;
+
   }
   index++;
+  if (index< questions.length){
+    showQuestions();
+  }
+else {
+quizContainer.classList.add("hide")
+initialContainer.classList.remove("hide")
+    
+    stopTimer()
+}
+  
 }
 
-answerButtonsElement.addEventListener("click", function (event) {
-    const guess = event.target.innerHTML;
-    checkAnswer(guess);
-    currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
-      setQuestion(questions[currentQuestionIndex]);
-    }
-  });
+answerButtonsElement.addEventListener("click", checkAnswer)
+
+function stopTimer () {
+    clearInterval(clockid)
+}
 
 function countdown () {
     time.textContent= timeRemaining--
@@ -113,21 +127,32 @@ function countdown () {
         stopTimer();
       }
 }
-// function saveHighScore(score){
-//     localStorage.setItem(score);
-//     window.location.reload();
-
-// }    
-// "saveHighScoreBtn".addEventListener("click", saveHighScore);
-
-// }
-
-
+function saveHighScore(score){
+    const user={
+        initial:initialInput.value ,
+        score:time.textContent
+    }
+    userScores.push(user)
+    localStorage.setItem("userScores",JSON.stringify(userScores));
+    initialContainer.classList.add ("hide");
+    saveHighScoreContainer.classList.remove("hide");
+displayHighScore()
+}
+function displayHighScore () {
+ scoreList.textContent=""
+ for (let i = 0; i < userScores.length; i++) {
+   var li = document.createElement("li")
+   li.textContent=userScores[i].initial+" - "+ userScores[i].score
+   scoreList.appendChild(li);
+    
+ }
+}
 startButton.addEventListener('click', startGame)
 answerChoice1.addEventListener("click", answerChoice1)
 answerChoice2.addEventListener("click", answerChoice2)
 answerChoice3.addEventListener("click", answerChoice3)
 answerChoice4.addEventListener("click", answerChoice4)
+initialsBtn.addEventListener("click", saveHighScore)
 
 
 // function showQuestion(questions) {

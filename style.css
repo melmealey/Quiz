@@ -14,8 +14,10 @@ h1 {
 body {
     background-color: black;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: white;
     
 }
 
@@ -71,7 +73,7 @@ body {
     display: none;
   } 
 
-#time {
+#time-section {
     color: white;
     font-size: 60px;
 }
