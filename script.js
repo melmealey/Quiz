@@ -1,3 +1,4 @@
+//variables
 const startButton = document.getElementById('beginQuiz')
 const questionContainterElement = document.getElementById('questionContainer')
 const questionElement = document.getElementById('question')
@@ -12,63 +13,63 @@ let answerChoice2 =document.getElementById('choice2')
 let answerChoice3 =document.getElementById('choice3')
 let answerChoice4 =document.getElementById('choice4')
 
+//Quiz questions array
 let questions = [
     {
-      Question: "What does HTML stand for?",
+      question1: "What does HTML stand for?",
       answer1: "How To Make Lasagna",
       answer2: "Hyper Text Markup Language",
       answer3: "Houses Together Might Levetate",
       answer4: "Harry Told Mommy Lies",
-      correctAnswer: "Hyper Text Maekup Language",
+      correctAnswer1: "Hyper Text Markup Language",
     },
+
     {
-      Question: "In what year was JavaScript intorduced?",
+      question2: "In what year was JavaScript intorduced?",
       answer1: "1970",
       answer2: "1997",
       answer3: "1990",
       answer4: "1995",
-      correctAnswer: "1995",
+      correctAnswer2: "1995",
     },
+
     {
-      question: "JavaScript file has an extnesion of:",
+      question3: "JavaScript file has an extnesion of:",
       answer1: ".Java",
       answer2: ".javascript",
       answer3: ".js",
       answer4: ".xtml",
-      correctAnswer: ".js",
+      correctAnswer3: ".js",
     },
   
     {
-      question: "Which CSS property controls the text size?",
+      question4: "Which CSS property controls the text size?",
       answer1: "text-style",
       answer2: "font-style",
       answer3: "text-size",
       answer4: "font-size",
-      correctAnswer: "font-size",
+      correctAnswer4: "font-size",
     },
     {
-      question: "Which is the correct HTML element for the largest heading?",
+      question5: "Which is the correct HTML element for the largest heading?",
       answer1: "<h1>",
       answer2: "<head>",
       answer3: "<heading>",
       answer4: "<h6>",
-      correctAnswer: "<h1>",
+      correctAnswer5: "<h1>",
     },
   ];
   let timeRemaining = questions.length *15 
   let index =0
 
+     //why is this empty?
   function showQuestion() {
-
+    for (let i = 0; i < questions.length; i++) {
+        console.log(questions[i])
   }
-
-  for (let i = 0; i < questions.length; i++) {
-    console.log(questions[i])
-
     }
 
-// Do I want my questions suffled? let shuffledQuestions, currentQuestionIndex
-//Here we go!
+//Here we go! Start Quiz
 function startGame(){
     startButton.style.display ="none"
     console.log("Here we go!")
@@ -79,79 +80,53 @@ function startGame(){
     showQuestions () 
 }
 function showQuestions () {
-title.textContent = questions [index].Question
+title.textContent = questions [index].question
 answerChoice1.textContent =questions [index].answer1
 answerChoice2.textContent =questions [index].answer2
 answerChoice3.textContent =questions [index].answer3
 answerChoice4.textContent =questions [index].answer4 
 
 }
+function checkAnswer(quesiton1, answer1,answer2, answer3, answer4) {
+    if (question1.correctAnswer === correctAnswer) {
+         //Display "CORRECT!"
+        alert("CORRECT!");
+    } else {
+        // Display "NOPE!"
+        alert("NOPE!");
+    }
+}
 
-// function showQuestion () {
-//     const questions =document.getElementById("questions");
-//     questions.textContent = questions[currentQuestion].questions;
-
-// }
-
-
+answerChoice1.addEventListener('click', function() {
+    checkAnswer(questions[currentQuestionIndex], answerChoice1.innerText);
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        setQuestion(questions[currentQuestionIndex]);
+    }
+});
 
 function countdown () {
     time.textContent= timeRemaining--
+    if (time === 0) {
+        stopTimer();
+      }
 }
+// function saveHighScore(score){
+//     localStorage.setItem(score);
+//     window.location.reload();
+
+// }    
+// "saveHighScoreBtn".addEventListener("click", saveHighScore);
+
+// }
 
 
 startButton.addEventListener('click', startGame)
+answerChoice1.addEventListener("click", answerChoice1)
+answerChoice2.addEventListener("click", answerChoice2)
+answerChoice3.addEventListener("click", answerChoice3)
+answerChoice4.addEventListener("click", answerChoice4)
 
-
-
-
-
-// document.getElementById(startButton).onclick = function(){
-//     let startButton =document.getElementById("startButton");
-//     if(startButton.style.display==="none"){
-//         startButton.style.display = "block";
-//     } else{
-//         startButton.style.display = "none";
-//     }
-// };
-
-// questionContainterElement.classList.show('show')
-
-
-
-// let countdown = 60;
-// for (let i=0; i < countdown.length; i++){
-
-
-//Countdown begins
-
-
-
-
-
-
-
-//     let 
-//     if (response == quesitons [i].answer){
-//         alert("Correct!");
-//     } else {
-//         score--;
-//         alert ("NOPE!");
-//     }
-// }
-
-
-//     shuffledQuestions = questions.sort(() => Math.random() - .5)
-//     currentQuestionIndex = 0
-//     questionContainterElement.classList.remove('hide')
-//     nextQuestion()
-// }
-
- //once the question is answered i want it to alert Correct! or Wrong! and move on to the next question
-// function nextQuestion(){
-//     showQuestion(shuffledQuestions[currentQuestionIndex])
-
-// }
 
 // function showQuestion(questions) {
 //     questionElement.innerText = questions.questions
@@ -165,13 +140,9 @@ startButton.addEventListener('click', startGame)
 
     // return questions;
 
+
+
     
-  
- 
-  
-
-
-
 
 // //Random word generator
 // let randomIndex = Math.floor(Math.random () * wordBank.length);

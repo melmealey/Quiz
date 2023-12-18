@@ -59,7 +59,6 @@ body {
     font-weight: bold;
     padding: 6px 12px;
     
-    
 } 
 
 .controls {
@@ -72,4 +71,7 @@ body {
     display: none;
   } 
 
-#time //make this show up white and bigger
+#time {
+    color: white;
+    font-size: 60px;
+}
