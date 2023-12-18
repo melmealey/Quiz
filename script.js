@@ -18,6 +18,8 @@ let initialsBtn =document.getElementById('Initials-btn')
 let initialInput =document.getElementById('initial-input')
 let saveHighScoreContainer =document.getElementById('highScoreContainer')
 let scoreList =document.getElementById('scoreList')
+let tryAgainBtn =document.getElementById('tryAgain')
+let resetHighScores =document.getElementById('resetHighScores')
 
 //Quiz questions array
 let questions = [
@@ -115,8 +117,6 @@ initialContainer.classList.remove("hide")
   
 }
 
-answerButtonsElement.addEventListener("click", checkAnswer)
-
 function stopTimer () {
     clearInterval(clockid)
 }
@@ -152,24 +152,15 @@ answerChoice1.addEventListener("click", answerChoice1)
 answerChoice2.addEventListener("click", answerChoice2)
 answerChoice3.addEventListener("click", answerChoice3)
 answerChoice4.addEventListener("click", answerChoice4)
+answerButtonsElement.addEventListener("click", checkAnswer)
 initialsBtn.addEventListener("click", saveHighScore)
-
-
-// function showQuestion(questions) {
-//     questionElement.innerText = questions.questions
-
-// }
-
-
-// function chooseAnswer() {
-
-// }
-
-    // return questions;
+tryAgainBtn.addEventListener("click", tryAgainBtn)
+resetHighScores.addEventListener("click", resetHighScores)
 
 
 
-    
+
+
 
 // //Random word generator
 // let randomIndex = Math.floor(Math.random () * wordBank.length);
