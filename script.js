@@ -150,10 +150,16 @@ function displayHighScore () {
    scoreList.appendChild(li);
     
  }
-//when
-
-
 }
+tryAgainBtn.addEventListener("click", function () {
+    location.reload();
+  });
+
+  resetHighScores.addEventListener("click", function () {
+    userScores = [];
+    localStorage.removeItem("userScores");
+    displayHighScore(); // Update the high score display
+  });
 
 
 startButton.addEventListener('click', startGame)
