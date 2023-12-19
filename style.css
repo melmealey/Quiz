@@ -1,14 +1,14 @@
-
 p {
-   color: aliceblue;
-   flex: content;
-   align-content: center;
+    color: aliceblue;
+    flex: content;
+    align-content: center;
+
 }
 
 h1 {
     text-align: center;
     color: aqua;
- 
+
 }
 
 body {
@@ -18,21 +18,22 @@ body {
     justify-content: center;
     align-items: center;
     color: white;
-    
+
 }
 
 .containter {
     width: 800px;
     max-width: 80%;
     background-color: white;
-    border-radius: 5px ;
-   
+    border-radius: 5px;
+
 }
 
 .buttonChoice {
     display: grid;
     gap: 10px;
     margin: 20px;
+
 }
 
 .button {
@@ -41,7 +42,7 @@ body {
     border-radius: 4px;
     padding: 6px 12px;
     font-size: 15px;
-    text-align:center;
+    text-align: center;
     color: white;
     width: 150px;
     height: 75px;
@@ -49,10 +50,11 @@ body {
     padding: 10px;
     cursor: pointer;
 
-}  
+}
 
 .button:hover {
     border-color: deeppink;
+
 }
 
 .startButton {
@@ -60,20 +62,23 @@ body {
     font-size: 18px;
     font-weight: bold;
     padding: 6px 12px;
-    
-} 
+
+}
 
 .controls {
-    
+
     justify-content: center;
     align-content: center;
+
 }
 
 .hide {
     display: none;
-  } 
+
+}
 
 #time-section {
     color: white;
     font-size: 60px;
+    
 }
