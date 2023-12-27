@@ -115,14 +115,15 @@ function checkAnswer(event) {
         tryAgainBtn.classList.remove("hide")
         resetHighScores.classList.remove("hide")
 
-        stopTimer()
+      
     }
-    //Timer ends at 0 seconds
+ //Timer ends at 0 seconds
 }
 
 function stopTimer() {
     clearInterval(clockid)
 }
+stopTimer()
 
 function countdown() {
     time.textContent = timeRemaining--
